@@ -1,0 +1,159 @@
+﻿body {
+}
+
+.HeadPanel
+{
+	font-family:Verdana;
+	background-color:Orange;
+	font-weight:bold;
+	text-align: center;
+	width: 100%;
+	height: 30px;	
+}
+
+.HeadPanelPath
+{
+	float: right;
+}
+.HeadPanelLeft
+{
+	font-family:Verdana;
+	background-color: Orange;
+	font-weight: bold;
+	text-align: left;
+	width: 100%;
+	height: 30px;
+}
+
+.SidePanel
+{
+	font-family: Verdana;
+	float: left;
+	background-color: Orange;
+	font-weight: bold;
+	text-align: center;
+	width: 150px;
+	height:  1000px;
+	position: static;
+}
+
+.FootPanel
+{
+	font-family: Verdana;
+	background-color: Orange;
+	text-align: center;
+	width: 100%;
+	height: 30px;
+}
+.RightImage
+{
+	text-align: right;
+}
+.LeftImage
+{
+	float:left;
+	text-align:left;
+	vertical-align: middle;
+}
+.LeftLabel
+{
+	float : left;
+	font-family: Verdana;
+	vertical-align: middle;
+}
+
+.TextBox
+{
+	float:left;
+	font-family:Verdana;
+	background-color:  White;
+	text-align:   left;
+	width: 90px;
+}
+
+.FieldValidator
+{
+	float: left;
+	font-family: Verdana;
+	color: red;
+	font-size: 10pt;
+}
+
+.ErrMsg
+{
+	font-weight: bold;
+	font-size: 15px;
+	color: red;
+}
+.NormalBtn
+{
+	float: none;
+	text-align: center;
+}
+.Menu
+{
+	font-size: 14pt;
+}
+.ErrMsg
+{
+	font-size: 16pt;
+	font-weight: bold;
+	color: blue;
+	font-family: 宋体;
+	text-align: center;
+}
+.GridViewSty
+{
+	 width:600px;	
+}
+.titleTbx
+{
+	width:700px;
+}
+.contentTbx
+{
+	width: 700px; 
+	height: 100px;
+}
+.table
+{
+	width: 600px; 
+	border-right: #6699ff 1px solid; 
+	border-top: #6699ff 1px solid; 
+	border-left: #6699ff 1px solid; 
+	border-bottom: #6699ff 1px solid;
+}
+.td1
+{
+	width: 600px; 
+	height: 30px; 
+	background-color: #3399ff; 
+	color: white;
+}
+.td2
+{
+	width: 100px;
+	 height: 30px;
+}
+.td3
+{
+	width: 600px; 
+	height: 30px; 
+	background-color: #ffcc66; 
+	color: black; 
+	border-left: #3399ff 1px solid;
+}
+.td4
+{
+	width: 100px; 
+	height: 30px;
+}
+.td5
+{
+	width: 600px;
+	border-left: #3399ff 1px solid;
+}
+.DefaultGridView
+{
+	float:right;
+	}

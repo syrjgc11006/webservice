@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="Welcome.aspx" title="Home"  description="BBS Home Page">
+        <siteMapNode url="bbs.aspx?zw" title="站务管理"  description="BBS 站务管理" />
+        <siteMapNode url="bbs.aspx?wh" title="文化艺术"  description="文化艺术" />
+        <siteMapNode url="bbs.aspx?js" title="信息技术"  description="信息技术" />
+        <siteMapNode url="bbs.aspx?xx" title="休闲娱乐"  description="休闲娱乐" />
+        <siteMapNode url="bbs.aspx?td" title="学习天地"  description="学习天地" />
+    </siteMapNode>
+</siteMap>

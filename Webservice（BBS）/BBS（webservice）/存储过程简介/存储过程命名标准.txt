@@ -1,0 +1,90 @@
+这个标准蓝图的存储过程命名方法只适用于SQL 内部，当创建一个新的存储过程，或发现一个没有按照这个标准构造的存储过程，请使用这个标准。
+
+　　注意：假如存储过程以sp_ 为前缀开始命名那么会运行的稍微的缓慢，这是因为SQL SERVER将首先查找系统存储过程，所以我们决不推荐使用sp_作为前缀。
+
+　　句法：
+
+　　存储过程的命名有这个的语法：
+
+　　[proc] [MainTableName] By [FieldName(optional)] [Action]
+
+
+　　[ 1 ] [ 　　2 ] [ 3 ]　　[ 4 ]
+
+　　[1] 任何的存储过程必须有前缀'proc'. 任何的系统存储过程都有前缀"sp_", 推荐不使用这样的前缀因为会稍微的减慢。
+
+[2] 表名就是存储过程访问的对象。
+
+　　[3] 可选字段名就是条件子句。 比如： procClientByCoNameSelect, procClientByClientIDSelect
+
+　　[4] 最后的行为动词就是存储过程要执行的任务。
+
+　　假如存储过程返回一条记录那么后缀是：Select
+
+　　假如存储过程插入数据那么后缀是：Insert
+
+　　假如存储过程更新数据那么后缀是：Update
+
+　　假如存储过程有插入和更新那么后缀是：Save
+
+　　假如存储过程删除数据那么后缀是：Delete
+
+　　假如存储过程更新表中的数据 (ie. drop and create) 那么后缀是：Create
+
+　　假如存储过程返回输出参数或0，那么后缀是：Output
+
+　　例子：
+
+　　一个仅仅返回一个输出参数的存储过程:
+
+ALTER PROCEDURE procClientRateOutput 
+@pstrClientID VARCHAR(6) = 'CABLE',
+@pstrCategoryID VARCHAR(6) = '<All>',
+@pstrEmpID VARCHAR(6)='AC',
+@pdteDate datetime = '1996/1/1',
+@curRate MONEY OUTPUT
+
+AS
+
+-- Description: Get the $Rate for this client and this employee 
+-- and this category from Table ClientRate
+
+SET @curRate = (
+SELECT TOP 1 Rate 
+FROM ClientRate 
+WHERE ClientID=@pstrClientID 
+AND EmpID=@pstrEmpID 
+AND CategoryID=@pstrCategoryID
+AND DateEnd > @pdteDate
+ORDER BY DateEnd
+)
+
+IF @curRate IS NULL
+
+SET @curRate =
+(
+SELECT TOP 1 Rate 
+FROM ClientRate 
+WHERE ClientID=@pstrClientID
+AND EmpID=@pstrEmpID 
+AND CategoryID='<ALL>' 
+AND DateEnd > @pdteDate 
+ORDER BY DateEnd
+)
+
+RETURN
+
+ 
+
+
+　　过时的风格：
+
+　　Select 'procGetRate' or 'sp_GetRate' 
+　　Insert 'procEmailMergeAdd' 
+
+
+　　推荐的风格：
+
+　　'procClientRateSelect' 
+　　'procEmailMergeInsert' 
+
